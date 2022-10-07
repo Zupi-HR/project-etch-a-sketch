@@ -1,0 +1,12 @@
+#container {
+    display: flex;
+    width: 50%;
+    margin: auto;
+}
+
+#container div {
+    border: 1px solid black;
+    height: 15px;
+    width: 15px;
+}
+
