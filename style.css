@@ -1,12 +1,16 @@
-#container {
+.main-container {
     display: flex;
-    width: 50%;
-    margin: auto;
+    flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 
-#container div {
-    border: 1px solid black;
-    height: 15px;
+.container {
+    display: flex;
+}
+
+.grid {
     width: 15px;
+    height: 15px;
+    border: 1px solid black;
 }
-
