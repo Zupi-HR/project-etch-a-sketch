@@ -7,7 +7,7 @@ const clearBTN = document.querySelector('.clear-btn');
 resetBTN.addEventListener('click', function () {
   empty(mainContainer);
   let userChoice = Number(prompt('How many squares per side?'));
-  if (userChoice <= 100) {
+  if (userChoice >= 0 && userChoice <= 100) {
     for (i = 1; i <= userChoice; i++) {
       const container = document.createElement('div');
       mainContainer.appendChild(container).classList.add('container');
@@ -21,7 +21,7 @@ resetBTN.addEventListener('click', function () {
       }
   }
   } else {
-    alert('Number is too high');
+    alert('Invalid number');
   }
 })
 
