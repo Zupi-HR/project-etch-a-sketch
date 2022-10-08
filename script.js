@@ -1,4 +1,29 @@
+
 const mainContainer = document.querySelector('.main-container');
+const resetBTN = document.querySelector('.reset-btn');
+const clearBTN = document.querySelector('.clear-btn');
+
+
+resetBTN.addEventListener('click', function () {
+  empty(mainContainer);
+  let userChoice = Number(prompt('How many squares per side?'));
+  if (userChoice <= 100) {
+    for (i = 1; i <= userChoice; i++) {
+      const container = document.createElement('div');
+      mainContainer.appendChild(container).classList.add('container');
+      for(j = 1; j <= userChoice; j++) {
+          const grid = document.createElement('div');
+          container.appendChild(grid);
+          grid.classList.add('grid');
+          grid.addEventListener("mouseenter", (e) => {
+              e.target.style.backgroundColor = randomColorGenerator();
+          })
+      }
+  }
+  } else {
+    alert('Number is too high');
+  }
+})
 
 function randomColorGenerator() {
   let color = "#";
@@ -9,18 +34,12 @@ function randomColorGenerator() {
   return color;
 }
 
-for (i = 1; i <= 16; i++) {
-    const container = document.createElement('div');
-    mainContainer.appendChild(container).classList.add('container');
-    for(j = 1; j <= 16; j++) {
-        const grid = document.createElement('div');
-        container.appendChild(grid);
-        grid.classList.add('grid');
-        grid.addEventListener("mouseenter", (e) => {
-            e.target.style.backgroundColor = randomColorGenerator();
-        })
+   function empty(element) {
+    while(element.firstElementChild) {
+      element.firstElementChild.remove();
     }
-}
+   }   
+      
 
 
 
